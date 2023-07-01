@@ -1,0 +1,58 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+#Recursive Floyd Warshall Algorithm:
+
+import sys
+import unittest
+
+NO_PATH = sys.maxsize
+graph = [[0, 7, NO_PATH, 8],
+         [NO_PATH, 0, 5, NO_PATH],
+         [NO_PATH, NO_PATH, 0, 2],
+         [NO_PATH, NO_PATH, NO_PATH, 0]]
+max_length = len(graph[0])
+
+def shortest_path(i, j, k, w):
+    if k == 0:
+        if i == j:
+            return 0
+        return w[i][j]
+    else:
+        return min(shortest_path(i, j, k - 1, w),
+                   shortest_path(i, k, k - 1, w) + shortest_path(k, j, k - 1, w))
+
+
+def floyd_warshall(distance):
+    for k in range(max_length):
+        for i in range(max_length):
+            for j in range(max_length):
+                distance[i][j] = shortest_path(i, j, k, distance)
+    return distance
+
+
+print(floyd_warshall(graph))
+
+#Unitest: The below test checks the code with a unittest to check if the actual output matches the expected output.
+
+class FloydTestCase(unittest.TestCase):
+    def test_floyd(self):
+        expected_result = [[0, 7, 12, 8],
+                           [NO_PATH, 0, 5, 7],
+                           [NO_PATH, NO_PATH, 0, 2],
+                           [NO_PATH, NO_PATH, NO_PATH, 0]]
+
+        result = floyd_warshall(graph)
+        self.assertEqual(result, expected_result)
+
+if __name__ == '__main__':
+    unittest.main()
