@@ -6,7 +6,8 @@ Git
 |
 |
 |-FloyedWarshall_Assessment_YasminKhan
-		|- Directory Tree
+		|-.github
+		|- Directory Tree	     |
 		|- main
 		|-README.md
 		|-Requirements
