@@ -1,0 +1,18 @@
+C:
+|
+|
+|
+Git
+|
+|
+|-FloyedWarshall_Assessment_YasminKhan
+		|- Directory Tree
+		|- main
+		|-README.md
+		|-Requirements
+		|-.idea
+		     |-.gitignore
+		     |-FloyedWarshal_Assessment_YasminKhan.iml
+		     |-InpectionProfiles
+		     
+	
