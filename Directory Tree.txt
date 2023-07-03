@@ -1,19 +1,16 @@
 C:
 |
-|
-|
 Git
 |
-|
 |-FloyedWarshall_Assessment_YasminKhan
-		|-.github
-		|- Directory Tree	     |
-		|- main
-		|-README.md
+		|
+		|- .idea-------------|-inspectionProfiles     
+		|- Directory Tree    |-.gitignore	     	     
+		|- License	     |-FloydWarshall_Assessment_YasminKhan.iml
+		|- main		     |-misc
+		|-README.md	     |-modules
 		|-Requirements
-		|-.idea
-		     |-.gitignore
-		     |-FloyedWarshal_Assessment_YasminKhan.iml
-		     |-InpectionProfiles
+		|-Unit tests
+		
 		     
 	
